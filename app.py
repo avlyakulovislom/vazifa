@@ -89,7 +89,7 @@ if st.button("Natijani ko'rsat"):
     ]
 
     
-   input_data = np.array(input_data).reshape(1, -1)
+    input_data = np.array(input_data).reshape(1, -1)
     
     prediction = model.predict(input_data)
     
