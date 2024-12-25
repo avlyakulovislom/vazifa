@@ -95,7 +95,6 @@ if st.button("Natijani ko'rsat"):
     
     diagnosis_result = diagnosis_map.get(prediction[0], "Noma'lum diagnoz")
     
-    # Ajoyib ko'rinishdagi natija
     st.markdown(f"""
     <style>
         .result {{
