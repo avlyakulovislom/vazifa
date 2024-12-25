@@ -89,13 +89,32 @@ if st.button("Natijani ko'rsat"):
     ]
 
     
-    input_data = np.array(input_data).reshape(1, -1)
-
+   input_data = np.array(input_data).reshape(1, -1)
     
     prediction = model.predict(input_data)
-
     
     diagnosis_result = diagnosis_map.get(prediction[0], "Noma'lum diagnoz")
-
     
-    st.success(f"Bashoratlangan diagnoz: {diagnosis_result}")
+    # Ajoyib ko'rinishdagi natija
+    st.markdown(f"""
+    <style>
+        .result {{
+            background-color: #F1F1F1;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C3E50;
+            border: 2px solid #3498DB;
+        }}
+        .result-header {{
+            font-size: 24px;
+            color: #3498DB;
+            margin-bottom: 15px;
+        }}
+    </style>
+    <div class="result">
+        <div class="result-header">Bashoratlangan diagnoz:</div>
+        <p>{diagnosis_result}</p>
+    </div>
+    """, unsafe_allow_html=True)
